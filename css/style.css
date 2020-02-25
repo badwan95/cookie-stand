@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou&display=swap');
+.data{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+body{
+    background-color: whitesmoke;
+}
+header{
+    padding: 1.5% 0 1.5% 0;
+    font-family: 'ZCOOL QingKe HuangYou';
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.5em;
+    background-color: honeydew;
+    word-spacing: 1em;
+    border-bottom:2px outset black;
+    border-radius: 0 0 15% 15%;
+    position:sticky;
+    top: 0;
+}
+nav ul li{
+    display:inline-block;
+    word-spacing: normal;
+}
+nav ul li a{
+    color: rgb(60, 60, 112);
+}
+nav ul li a:hover{
+    color: violet;
+}
+a{
+    text-decoration: none;
+}
+main{
+    margin: 1% 10%;
+    min-height: calc(100vh - 6%);
+    background-color: rgb(252, 250, 241);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px dotted black;
+    border-radius: 5% 0 5% 0;
+    height: 2500px;
+}
+#main-div{
+    margin: 0 5%;
+}
+
+.div1 {
+    overflow: auto;
+}
+.div1 p{
+    text-align: justify;
+}
+.div1 img{
+    width: 50%;
+    height: 50%;
+    float: left;
+}
+.div2{
+    padding-top: 50px;
+    overflow: auto;
+}
+.div2 img {
+    float: right;
+}
+.places{
+    margin: 25px 25px;
+    overflow: hidden;
+}
+.places1 ul {
+    width: 50%;
+    list-style-type: circle;
+    padding-left: 50px;
+    float: left;
+}
+.places1 p{
+    float: right;
+}
