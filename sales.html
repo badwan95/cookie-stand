@@ -23,6 +23,20 @@
     </header>
     <main>
         <h2>Our Locations and their information:</h2>
+        <form id="businessForm">
+            <fieldset>
+                <legend>Add new restaurant</legend>
+                <label for="locationName">Market Name</label>
+                <input type="text" id="locationName" placeholder="Enter Market Name">
+                <label for="minCustomers">Min Customers</label>
+                <input type="number" id="minCustomers" placeholder="Min. number of customers">
+                <label for="maxCustomers">Max Customers</label>
+                <input type="number" id="maxCustomers" placeholder="Max. Number of Customers">
+                <label for="averageCookieSale">Average cookies sold per person</label>
+                <input type="number" id="averageCookieSale" step=".1" placeholder="Cookies sold per person">
+                <input type="submit">
+            </fieldset>
+        </form>
         <div id="locations">
         </div>
     </main>

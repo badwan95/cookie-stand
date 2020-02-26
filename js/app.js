@@ -45,7 +45,6 @@ Business.prototype.customerNumber = function(min,max){
 };
 Business.prototype.averageHourlyCookies = function(){
   this.avgHourlyCookiesSold = Math.ceil(this.averageCustomers * this.averageCookieSale);
-  return this.avgHourlyCookiesSold;
 };
 Business.prototype.fullDayCookies = function(){
   for (let i = 0; i < hours.length; i++) {
@@ -88,10 +87,29 @@ new Business('Paris', 20 , 38 , 2.3);
 new Business('Lima', 2 , 16 , 4.6);
 
 
+var businessForm = document.getElementById('businessForm');
+businessForm.addEventListener('submit', function(event){
+  event.preventDefault();
+  var locationNameEvent = event.target.locationName.value;
+  var minCustomersEvent = event.target.minCustomers.value;
+  var maxCustomersEvent = event.target.maxCustomers.value;
+  var averageCookieSaleEvent = event.target.averageCookieSale.value;
+  new Business(locationNameEvent, minCustomersEvent, maxCustomersEvent, averageCookieSaleEvent);
+  document.getElementById('lastRow').remove();
+  lastRow();
+});
+
+
+
+
+
+
+
 function lastRow(){
   var trEl = document.createElement('tr');
   var selector = document.querySelector('table');
   selector.appendChild(trEl);
+  trEl.id = 'lastRow';
   var thEl = document.createElement('th');
   trEl.appendChild(thEl);
   thEl.textContent = 'Total';
