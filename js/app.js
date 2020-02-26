@@ -120,22 +120,3 @@ function getCustomerNumber(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
 }
-
-
-// var mainParent = document.getElementById('locations');
-// var tableEl = document.createElement('table');
-// mainParent.appendChild(tableEl);
-// var trEl = document.createElement('tr');
-// trEl.textContent = 'Total';
-// // var bottomRow = ['Total'];
-// for (let hours = 1; hours <= hours.length ; hours++) {
-//   hourFinalTotal = 0;
-//   for (let cities = 0; cities < locationArr.length; cities++) {
-//     var thEl = document.createElement('th');
-//     trEl.appendChild(thEl);
-//     perHourTotal += locationArr.length[cities].soldPerHour.length[hours]}
-//   bottomRow.push(totalHourly);
-//   var thEl = document.createElement('th');
-//   trEl.appendChild(thEl);
-//   thEl.textContent = bottomRow[i];
-//   };
