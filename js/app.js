@@ -1,9 +1,10 @@
 'use strict';
 // First Business
-var hours = [ '','6:00am','7:00am','8:00am','9:00am', '10:00am', '11:00am','12:00pm','1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm', 'Daily Location Total'];
+var hours = [ '6:00am','7:00am','8:00am','9:00am', '10:00am', '11:00am','12:00pm','1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm'];
 
-var bottomRow = ['','Total'];
+var bottomRow = [];
 var totalHourly = [];
+var locationArr = [];
 
 function firstRow(){
   var mainParent = document.getElementById('locations');
@@ -16,6 +17,9 @@ function firstRow(){
     trEl.appendChild(thEl);
     thEl.textContent = hours[i];
   }
+  thEl = document.createElement('th');
+  trEl.appendChild(thEl);
+  thEl.textContent = 'Daily Location Total';
 }
 firstRow();
 
@@ -28,6 +32,11 @@ function Business(locationName, minCustomers , maxCustomers , averageCookieSale)
   this.averageCustomers = 0;
   this.avgHourlyCookiesSold = 0;
   this.totalCookies = 0;
+  locationArr.push(this);
+  this.customerNumber();
+  this.averageHourlyCookies();
+  this.fullDayCookies();
+  this.renderTable();
 }
 Business.prototype.customerNumber = function(min,max){
   this.averageCustomers = getCustomerNumber(min,max);
@@ -37,7 +46,7 @@ Business.prototype.averageHourlyCookies = function(){
   return this.avgHourlyCookiesSold;
 };
 Business.prototype.fullDayCookies = function(){
-  for (let i = 0; i < 14; i++) {
+  for (let i = 0; i < hours.length; i++) {
     this.customerNumber(this.minCustomers,this.maxCustomers );
     this.averageHourlyCookies();
     this.soldPerHour.push(this.avgHourlyCookiesSold);
@@ -58,35 +67,6 @@ Business.prototype.renderTable = function (){
 
 };
 
-var seattleBusiness = new Business('Seattle', 23 , 65 , 6.3);
-seattleBusiness.customerNumber();
-seattleBusiness.averageHourlyCookies();
-seattleBusiness.fullDayCookies();
-seattleBusiness.renderTable();
-
-var tokyoBusiness = new Business('Tokyo', 3 , 24 , 1.3);
-tokyoBusiness.customerNumber();
-tokyoBusiness.averageHourlyCookies();
-tokyoBusiness.fullDayCookies();
-tokyoBusiness.renderTable();
-
-var dubaiBusiness = new Business('Dubai', 11 , 38 , 3.7);
-dubaiBusiness.customerNumber();
-dubaiBusiness.averageHourlyCookies();
-dubaiBusiness.fullDayCookies();
-dubaiBusiness.renderTable();
-
-var parisBusiness = new Business('Paris', 20 , 38 , 2.3);
-parisBusiness.customerNumber();
-parisBusiness.averageHourlyCookies();
-parisBusiness.fullDayCookies();
-parisBusiness.renderTable();
-
-var limaBusiness = new Business('Lima', 2 , 16 , 4.6);
-limaBusiness.customerNumber();
-limaBusiness.averageHourlyCookies();
-limaBusiness.fullDayCookies();
-limaBusiness.renderTable();
 
 function lastRow(){
   var trEl = document.createElement('tr');
