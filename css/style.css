@@ -4,6 +4,7 @@
 }
 .text{
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 18px;
 }
 body{
     background-color: whitesmoke;
@@ -38,7 +39,6 @@ nav ul li a{
 nav ul li a:hover{
     color: violet;
 }
-
 main{
     margin: 1% 10%;
     background-color: rgb(252, 250, 241);
@@ -51,7 +51,6 @@ main{
 #main-div{
     margin: 0 5%;
 }
-
 .div1 {
     overflow: auto;
 }
@@ -70,11 +69,23 @@ main{
 .div2 img {
     float: right;
 }
+.div2 p{
+    padding-top: 30px;
+    text-align: justify;
+}
+h2 {
+    font-family: 'ZCOOL QingKe HuangYou';
+    padding: 20px;
+    font-size: 20px;
+}
 .places{
     margin: 25px 25px;
     overflow: hidden;
 }
 .places1 ul {
+    margin-top: 60px;
+    margin-left: 50px;
+    line-height: 200%;
     width: 50%;
     list-style-type: circle;
     padding-left: 50px;
@@ -89,7 +100,7 @@ p.text {
 h2{
     text-align: center;
 }
-table, th, td {
+#mainTable, #mainTable th, #mainTable td {
     border: 1px solid black;
     width: 30%;
     height: 30px;
@@ -98,4 +109,31 @@ footer{
     text-align: center;
     padding: 1% 0;
     background-color: grey;
+}
+table {
+    width: 70%;
+    margin: 50px auto;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 20px 20px 20px rgba(0,0,0,0.4);
+}
+tr th{
+    text-align: left;
+    padding: 10px 10px;
+    border-bottom: 1px solid rgb(121, 121, 121);
+}
+tr:first-child{
+    border-top: 5px double black;
+ 
+}
+tr:last-of-type{
+    border-bottom: 5px double black;
+}
+tr:nth-of-type(odd){
+    background-color: #d3d3d3;
+}
+table tr:first-child {
+    background-color: rgb(176, 192, 176);
+    font-weight: bolder;
+    text-align: left;
 }
